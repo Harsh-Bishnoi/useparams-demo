@@ -58,22 +58,25 @@ const Hard = () => {
                             isActive={activeCategory === "more"}
                             onClick={() => handleCategoryClick("more")}
                         />
-
                         {ALPHABET_LIST.map((item, index) => (
                             <button key={index}
-                                onClick={() => handleAlphabetClick(item)} className={`hover:bg-[#14191C] hover:text-white rounded-full size-[26px] flex items-center justify-center cursor-pointer transition-all duration-200 ease-linear text-xs leading-[18px] ff-poppins text-[#14191C]  ${activeAlphabet === item ? 'bg-black text-white' : ''}`}>{item}</button>
+                                onClick={() => handleAlphabetClick(item)} className={`hover:bg-[#14191C] hover:text-white rounded-full min-h-[26px] min-w-[26px] flex items-center justify-center cursor-pointer transition-all duration-200 ease-linear text-xs leading-[18px] ff-poppins text-[#14191C] 
+                            ${activeAlphabet === item && getAlphabet().toUpperCase() === item ? 'bg-black text-white' : ''}`}
+                            >
+                                {item}
+                            </button>
                         ))}
                     </div>
                 </div>
                 <div className="w-full bg-img rounded-[22px] py-9 px-3 md:px-6 lg:pt-9 lg:pb-[43px] lg:pl-[48px] lg:pr-[43px] mt-[43px] relative">
                     <div className="absolute top-0 left-0 w-full h-full bg-[#14191C] opacity-100 z-0 rounded-[22px]"></div>
-                    <div className="md:flex md:justify-between gap-4 max-md:pb-20 relative z-10">
+                    <div className="md:flex md:justify-between gap-4 max-md:pb-5 relative z-10">
                         <h1 className="ff-montserrat max-md:text-center font-bold text-4xl md:text-5xl leading-[100%] uppercase text-[#FAFAFF]">
                             hit me hard and {getHeadingText()}
                         </h1>
                         <img className="max-md:pt-5 max-md:mx-auto pointer-events-none" src={woodImg} alt="wood-img" />
                     </div>
-                    <div className="flex gap-3 md:gap-6.5 items-center absolute max-md:left-10 -bottom-6 md:-bottom-12 lg:-bottom-16 z-10">
+                    <div className="flex gap-3 md:gap-6.5 items-center relative justify-center md:absolute md:-bottom-12 lg:-bottom-16 z-10">
                         <img className="size-[130px] md:size-[170px] pointer-events-none lg:size-[206px]" src={girlImg} alt="girl-img" />
                         <div>
                             <h3 className="ff-poppins font-semibold text-2xl lg:text-[32px] leading-normal lg:leading-[42px] text-white pb-[5px]">
