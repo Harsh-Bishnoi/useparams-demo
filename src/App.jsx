@@ -1,17 +1,16 @@
-// App.jsx
 import './App.css';
-import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import { Router, Routes, Route, Navigate, BrowserRouter } from 'react-router-dom';
 import Hard from './components/Hard';
 
 function App() {
   return (
-    <Router>
+    <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Navigate to="/category/all" />} />
+        <Route path="/" element={<Navigate to="/category/soft" />} />
         <Route path="/category/:type" element={<Hard />} />
         <Route path="/alphabet/:alphabet_name" element={<Hard />} />
       </Routes>
-    </Router>
+    </BrowserRouter>
   );
 }
 
